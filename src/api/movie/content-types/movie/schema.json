@@ -1,0 +1,67 @@
+{
+  "kind": "collectionType",
+  "collectionName": "movies",
+  "info": {
+    "singularName": "movie",
+    "pluralName": "movies",
+    "displayName": "Movies",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "posterImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "releaseDate": {
+      "type": "date",
+      "required": true
+    },
+    "director": {
+      "type": "string",
+      "required": true
+    },
+    "runtime": {
+      "type": "integer",
+      "required": true
+    },
+    "rating": {
+      "type": "integer",
+      "required": true
+    },
+    "summary": {
+      "type": "blocks",
+      "required": true
+    },
+    "writers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::writer.writer"
+    },
+    "genres": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::genre.genre"
+    },
+    "actors": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::actor.actor",
+      "inversedBy": "movies"
+    },
+    "review": {
+      "type": "blocks"
+    }
+  }
+}
