@@ -892,6 +892,7 @@ export interface ApiMovieMovie extends Schema.CollectionType {
       'api::actor.actor'
     >;
     review: Attribute.Blocks;
+    trailerLink: Attribute.String & Attribute.Unique;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

@@ -62,6 +62,10 @@
     },
     "review": {
       "type": "blocks"
+    },
+    "trailerLink": {
+      "type": "string",
+      "unique": true
     }
   }
 }
